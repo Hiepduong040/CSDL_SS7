@@ -116,18 +116,14 @@ as stt, ten_phim, thoi_gian from tbl_phim;
 -- 10
 alter table tbl_phim 
 add column mo_ta nvarchar(255);
-
--- 11
 update tbl_phim set mo_ta = concat('Đây là bộ phim thể loại ', loai_phim);
 select * 
 from tbl_phim;
-
--- 12
 update tbl_phim set mo_ta = replace(mo_ta, 'bộ phim', 'film');
 select * 
 from tbl_phim;
 
--- 13
+-- 11
 alter table tbl_ghe 
 drop foreign key tbl_ghe_ibfk_1;
 alter table tbl_ve 
@@ -135,9 +131,9 @@ drop foreign key tbl_ve_ibfk_1;
 alter table tbl_ve 
 drop foreign key tbl_ve_ibfk_2;
 
--- 14
+-- 12
 delete from tbl_ghe;
 
--- 15
+-- 13
 select ngay_chieu, date_add(ngay_chieu, interval 5000 minute) 
 as 'Ngày chiếu +5000 phút' from tbl_ve;
